@@ -1,0 +1,16 @@
+When using a display manager, the keyring works out of the box for most cases. GDM, LightDM, LXDM, and SDDM already have the necessary PAM configuration. For a display manager that does not automatically unlock the keyring edit the appropriate file instead of /etc/pam.d/login as mentioned below.
+
+When using console-based login, edit /etc/pam.d/login:
+
+Add auth optional pam_gnome_keyring.so at the end of the auth section and session optional pam_gnome_keyring.so auto_start at the end of the session section.
+
+/etc/pam.d/login
+#%PAM-1.0
+
+auth       required     pam_securetty.so
+auth       requisite    pam_nologin.so
+auth       include      system-local-login
+auth       optional     pam_gnome_keyring.so
+account    include      system-local-login
+session    include      system-local-login
+session    optional     pam_gnome_keyring.so auto_start

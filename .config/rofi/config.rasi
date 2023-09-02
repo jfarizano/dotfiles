@@ -1,0 +1,4 @@
+//@theme "/usr/share/rofi/themes/sidebar.rasi"
+//@theme "/usr/share/rofi/themes/android_notification.rasi"
+//@theme "/usr/share/rofi/themes/gruvbox-dark-soft.rasi"
+@theme "/home/fari/.local/share/rofi/themes/spotlight-dark.rasi"
