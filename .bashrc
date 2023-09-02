@@ -96,7 +96,8 @@ alias lt='ls --size -1 -S --classify'
 # display actual git branch
 
 
-# use vim for sudoedit
+# use vim for sudoedit and as default editor
+export EDITOR=nvim
 export SUDO_EDITOR=/usr/bin/nvim
 
 # Add an "alert" alias for long running commands.  Use like so:

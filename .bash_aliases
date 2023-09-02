@@ -20,3 +20,24 @@ alias ....='cd ../../..'
 # aliases 2 always use nvim
 alias vi='nvim'
 alias vim='nvim'
+
+# tengo que explicarlo?
+alias apt='sudo apt'
+
+# crear directorio y subdirectorios
+alias mkdir='mkdir -pv'
+
+# do not delete / or prompt if deleting more than 3 files at a time #
+alias rm='rm -I --preserve-root'
+
+# Parenting changing perms on / #
+alias chown='chown --preserve-root'
+alias chmod='chmod --preserve-root'
+alias chgrp='chgrp --preserve-root'
+
+# become root
+alias root='sudo -i'
+
+# olis
+alias df='df -H'
+alias du='du -ch'
