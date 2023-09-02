@@ -10,6 +10,7 @@ alias ga='git add'
 alias gaa='git add --all'
 alias gc='git commit -m'
 alias gl='git log -n 5'
+alias gp='git push'
 
 # movement lul (roba2 de por ahi)
 alias ..='cd ..'
