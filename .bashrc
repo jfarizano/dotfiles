@@ -91,16 +91,10 @@ fi
 alias ll='ls -l'
 alias la='ls -la'
 alias l='ls -CF'
+alias lt='ls --size -1 -S --classify'
 
-# docker compose detached 
-alias dcu='docker compose up -d'
+# display actual git branch
 
-# easier opening of files with default app
-alias open='xdg-open'
-
-# aliases 2 always use nvim
-alias vi='nvim'
-alias vim='nvim'
 
 # use vim for sudoedit
 export SUDO_EDITOR=/usr/bin/nvim
@@ -131,3 +125,8 @@ fi
 . "$HOME/.cargo/env"
 
 [ -f "/home/fari/.ghcup/env" ] && source "/home/fari/.ghcup/env" # ghcup-env
+
+source ~/.git-prompt.sh
+
+# \[\e]0;\u@\h: \w\a\]${debian_chroot:+($debian_chroot)}\[\033[01;32m\][\033[00m\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$
+export PS1='\[\033[01;32m\]\u\[\033[00m\]\[\033[01;37m\]@\[\033[00m\]\[\033[01;35m\]\h\[\033[00m\]\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]$(__git_ps1 " \[\033[01;33m\](%s)\[\033[00m\]")\$ '
