@@ -40,4 +40,4 @@ alias root='sudo -i'
 
 # olis
 alias df='df -H'
-alias du='du -ch'
+alias du='du -ch --max-depth=1'
