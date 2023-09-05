@@ -31,8 +31,6 @@ cpu_usage {
 cpu_temperature 0 {
   format = "   %degrees°C "
   max_threshold = "75"
-  # Descomentar en desktop
-  # path = "/sys/class/hwmon/hwmon0/temp1_input"
 }
 
 disk "/" {
@@ -43,6 +41,7 @@ memory {
         format = "   %used / %total "
         threshold_degraded = " 1G "
         format_degraded = " MEMORY < %available "
+        memory_used_method = memavailable
 }
 
 ethernet _first_ {
