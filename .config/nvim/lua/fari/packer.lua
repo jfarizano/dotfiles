@@ -14,10 +14,10 @@ return require('packer').startup(function(use)
   }
 
   use({
-	  'RRethy/nvim-base16',
-	  as = 'base16',
+	  'rebelot/kanagawa.nvim',
+	  as = 'kanagawa',
 	  config = function()
-		  vim.cmd('colorscheme base16-brewer')
+		  vim.cmd('colorscheme kanagawa')
 	  end
   })
 
@@ -66,5 +66,39 @@ return require('packer').startup(function(use)
   }
 
   use('xiyaowong/virtcolumn.nvim')
+
+  use {
+      'folke/which-key.nvim',
+      config = function()
+          vim.o.timeout = true
+          vim.o.timeoutlen = 300
+          require("which-key").setup {
+              -- your configuration comes here
+              -- or leave it empty to use the default settings
+              -- refer to the configuration section below
+          }
+      end
+  }
+
+  use('lewis6991/gitsigns.nvim')
+
+  use {
+      'nvim-lualine/lualine.nvim',
+      requires = { 'nvim-tree/nvim-web-devicons', opt = true },
+      theme = 'horizon'
+  }
+
+  use {
+      "windwp/nvim-autopairs",
+      config = function() require("nvim-autopairs").setup {} end
+  }
+
+
+ use {
+     'numToStr/Comment.nvim',
+     config = function()
+         require('Comment').setup()
+     end
+ }
 
 end)
