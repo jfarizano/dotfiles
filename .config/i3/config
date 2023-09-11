@@ -241,14 +241,14 @@ mode "resize" {
 exec --no-startup-id /usr/bin/gnome-keyring-daemon --start --components=ssh,secrets,pkcs11,gpg
 exec --no-startup-id /usr/lib/policykit-1-gnome/polkit-gnome-authentication-agent-1 &
 exec --no-startup-id /usr/libexec/gsd-xsettings 
-exec --no-startup-id sh ~/.screenlayout/desktop.sh
+# exec --no-startup-id sh ~/.screenlayout/desktop.sh
 exec --no-startup-id xss-lock --transfer-sleep-lock -- /home/fari/.config/i3/lock/lock.sh
 exec --no-startup-id xset s off -dpms
 exec --no-startup-id nitrogen --restore; sleep 1; compton -b
 exec --no-startup-id nm-applet
 exec --no-startup-id flameshot
 exec --no-startup-id kdeconnect-indicator
-# exec --no-startup-id blueman-applet
+exec --no-startup-id blueman-applet
 exec --no-startup-id dunst
 
 # Color palette used for the terminal ( ~/.Xresources file )
