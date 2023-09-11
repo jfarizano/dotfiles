@@ -41,3 +41,7 @@ alias root='sudo -i'
 # olis
 alias df='df -H'
 alias du='du -ch --max-depth=1'
+alias dus='du | sort -H'
+
+# copy working directory to clipboard
+alias cpwd='pwd | tr -d "\n" | xclip -sel c'
