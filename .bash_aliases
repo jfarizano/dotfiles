@@ -2,7 +2,7 @@
 alias dcu='docker compose up -d'
 
 # easier opening of files with default app
-alias open='xdg-open'
+open(){ xdg-open $@ & }
 
 # git aliases
 alias gs='git status'
@@ -45,3 +45,6 @@ alias dus='du | sort -H'
 
 # copy working directory to clipboard
 alias cpwd='pwd | tr -d "\n" | xclip -sel c'
+
+# open terminal same working directory
+alias dupwd='urxvt &'
