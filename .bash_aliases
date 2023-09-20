@@ -2,7 +2,7 @@
 alias dcu='docker compose up -d'
 
 # easier opening of files with default app
-open(){ xdg-open $@ & }
+open(){ xdg-open $@ &>> /dev/null & }
 
 # git aliases
 alias gs='git status'
