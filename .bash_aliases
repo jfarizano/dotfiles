@@ -12,10 +12,13 @@ alias gc='git commit -m'
 alias gl='git log -n 5'
 alias gp='git push'
 
+# do ls after successful cd
+cdls() { cd "$@" && ls; }
+
 # movement lul (roba2 de por ahi)
-alias ..='cd ..'
-alias ...='cd ../..'
-alias ....='cd ../../..'
+alias ..='cdls ..'
+alias ...='cdls ../..'
+alias ....='cdls ../../..'
 
 # aliases 2 always use nvim
 alias vi='nvim'
@@ -48,3 +51,4 @@ alias cpwd='pwd | tr -d "\n" | xclip -sel c'
 
 # open terminal same working directory
 alias dupwd='urxvt &'
+
