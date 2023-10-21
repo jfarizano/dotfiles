@@ -53,5 +53,5 @@ alias cpwd='pwd | tr -d "\n" | xclip -sel c'
 alias dupwd='urxvt &'
 
 # alias gcc
-alias gg = 'gcc -g'
-alias ggn = 'gcc -g -no-pie'
+alias gg='gcc -g'
+alias ggn='gcc -g -no-pie'
