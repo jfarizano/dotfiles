@@ -52,3 +52,6 @@ alias cpwd='pwd | tr -d "\n" | xclip -sel c'
 # open terminal same working directory
 alias dupwd='urxvt &'
 
+# alias gcc
+alias gg = 'gcc -g'
+alias ggn = 'gcc -g -no-pie'
