@@ -1,3 +1,6 @@
+# porque la dislexia es mas fuerte que todo
+alias dc='cd'
+
 # docker compose detached 
 alias dcu='docker compose up -d'
 
@@ -55,3 +58,7 @@ alias dupwd='urxvt &'
 # alias gcc
 alias gg='gcc -g'
 alias ggn='gcc -g -no-pie'
+alias gcc-arm='arm-linux-gnueabi-gcc -g -static'
+alias gcc-armhf='arm-linux-gnueabihf-gcc -g -static'
+alias qemu-arm='qemu-arm-static -g 1234'
+alias gdb-arm='gdb-multiarch --eval-command="target remote localhost:1234"'
