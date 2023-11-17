@@ -50,6 +50,7 @@ URxvt.scrollBar:	false
 URxvt.internalBorder:   0
 URxvt.transparent:      true
 URxvt.shading:          15
+URxvt.geometry: 80x-1
 
 Xft.dpi:                  96
 Xft.antialias:            true
@@ -65,5 +66,3 @@ URxvt.keysym.Control-Meta-c: builtin-string:
 URxvt.keysym.Control-Meta-v: builtin-string:
 URxvt.iso14755: false
 URxvt.iso14755_52: false
-
-URxvt.geometry: 80x-1
