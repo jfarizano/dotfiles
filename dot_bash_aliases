@@ -1,0 +1,67 @@
+# porque la dislexia es mas fuerte que todo
+alias dc='cd'
+
+# docker compose detached 
+alias dcu='docker compose up -d'
+alias dcstart='docker compose start'
+alias dcstop='docker compose stop'
+
+# easier opening of files with default app
+open(){ xdg-open $@ &>> /dev/null & }
+
+# git aliases
+alias gs='git status'
+alias ga='git add'
+alias gaa='git add --all'
+alias gc='git commit -m'
+alias gl='git log -n 5'
+alias gpull='git pull'
+alias gpush='git push'
+
+# do ls after successful cd
+cdls() { cd "$@" && ls; }
+
+# movement lul (roba2 de por ahi)
+alias ..='cdls ..'
+alias ...='cdls ../..'
+alias ....='cdls ../../..'
+
+# aliases 2 always use nvim
+alias vi='nvim'
+alias vim='nvim'
+
+# tengo que explicarlo?
+alias apt='sudo apt'
+
+# crear directorio y subdirectorios
+alias mkdir='mkdir -pv'
+
+# do not delete / or prompt if deleting more than 3 files at a time #
+alias rm='rm -I --preserve-root'
+
+# Parenting changing perms on / #
+alias chown='chown --preserve-root'
+alias chmod='chmod --preserve-root'
+alias chgrp='chgrp --preserve-root'
+
+# become root
+alias root='sudo -i'
+
+# olis
+alias df='df -H'
+alias du='du -ch --max-depth=1'
+alias dus='du | sort -H'
+
+# copy working directory to clipboard
+alias cpwd='pwd | tr -d "\n" | xclip -sel c'
+
+# open terminal same working directory
+alias dupwd='urxvt &'
+
+# alias gcc
+alias gg='gcc -g'
+alias ggn='gcc -g -no-pie'
+alias gcc-arm='arm-linux-gnueabi-gcc -g -static'
+alias gcc-armhf='arm-linux-gnueabihf-gcc -g -static'
+alias qemu-arm='qemu-arm-static -g 1234'
+alias gdb-arm='gdb-multiarch --eval-command="target remote localhost:1234"'

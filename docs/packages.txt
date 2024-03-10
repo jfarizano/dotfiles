@@ -1,0 +1,131 @@
+===============================================
+Paquetes en repo oficial
+===============================================
+apt install grub-customizer wget curl git build-essential net-tools i3 rofi openssh-server vlc ffmpeg flatpak tree lxappearance policykit-1-gnome pavucontrol nitrogen flameshot arandr kdeconnect gnome-tweaks gtk-chtheme pulseaudio acpi acpid subversion gdb-multiarch gcc-arm-linux-gnueabi gcc-arm-linux-gnueabihf qemu-system qemu-user-static texlive-full compton unrar xsettingsd neofetch qt5ct libcanberra-gtk-module ripgrep npm tmux libffi-dev libgmp-dev libgmp10 libncurses-dev libncurses5 libtinfo5 ninja-build gettext uidmap xclip playerctl okular btop
+
+syncthing, kitty, lf, fzf
+
+===============================================
+ZeroTier
+===============================================
+curl -s https://install.zerotier.com | sudo bash
+
+===============================================
+Zoxide
+===============================================
+curl -sS https://raw.githubusercontent.com/ajeetdsouza/zoxide/main/install.sh | bash
+
+===============================================
+Chrome
+===============================================
+wget -i https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb -o chrome.deb
+sudo apt install ./chrome.deb
+rm chrome.deb
+
+===============================================
+Zulip
+===============================================
+sudo curl -fL -o /etc/apt/trusted.gpg.d/zulip-desktop.asc \
+    https://download.zulip.com/desktop/apt/zulip-desktop.asc
+echo "deb https://download.zulip.com/desktop/apt stable main" | \
+    sudo tee /etc/apt/sources.list.d/zulip-desktop.list
+sudo apt update
+sudo apt install zulip
+
+===============================================
+VS Code
+===============================================
+wget -i https://code.visualstudio.com/sha/download?build=stable&os=linux-deb-x64 -o code.deb
+sudo apt install ./code.deb
+rm code.deb
+
+===============================================
+Discord
+===============================================
+wget -i https://discord.com/api/download?platform=linux&format=deb -o discord.deb
+sudo apt install ./discord.deb
+rm discord.deb
+
+===============================================
+Telegram
+===============================================
+flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
+flatpak install flathub org.telegram.desktop
+
+===============================================
+Spotify
+===============================================
+curl -sS https://download.spotify.com/debian/pubkey_7A3A762FAFD4A51F.gpg | sudo gpg --dearmor --yes -o /etc/apt/trusted.gpg.d/spotify.gpg
+echo "deb http://repository.spotify.com stable non-free" | sudo tee /etc/apt/sources.list.d/spotify.list
+sudo apt-get update && sudo apt-get install spotify-client
+
+===============================================
+DBeaver
+===============================================
+wget -i https://dbeaver.io/files/dbeaver-ce_latest_amd64.deb -o dbeaver.deb
+sudo apt install ./dbeaver.deb
+rm dbeaver.deb
+
+===============================================
+Rust
+===============================================
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+
+===============================================
+Go
+===============================================
+wget -i https://dl.google.com/go/go1.21.0.linux-amd64.tar.gz -o go.tar.gz
+rm -rf /usr/local/go && tar -C /usr/local -xzf go.tar.gz
+rm go.tar.gz
+
+asegurarse de que esté en el path
+
+===============================================
+Haskell
+===============================================
+curl --proto '=https' --tlsv1.2 -sSf https://get-ghcup.haskell.org | sh
+
+===============================================
+Docker Engine
+===============================================
+for pkg in docker.io docker-doc docker-compose podman-docker containerd runc; do sudo apt-get remove $pkg; done
+sudo install -m 0755 -d /etc/apt/keyrings
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
+sudo chmod a+r /etc/apt/keyrings/docker.gpg
+echo \
+  "deb [arch="$(dpkg --print-architecture)" signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu \
+  "$(. /etc/os-release && echo "$VERSION_CODENAME")" stable" | \
+  sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+sudo apt-get update
+sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+
+===============================================
+Docker Desktop
+===============================================
+Buscar .deb en la página
+
+===============================================
+NeoVim
+===============================================
+git clone https://github.com/neovim/neovim
+cd neovim && git checkout stable && make CMAKE_BUILD_TYPE=RelWithDebInfo
+cd build && cpack -G DEB && sudo dpkg -i nvim-linux64.deb
+
+===============================================
+Kitty
+===============================================
+curl -L https://sw.kovidgoyal.net/kitty/installer.sh | sh /dev/stdin
+
+
+mkdir -p ~/.local/bin
+# Create symbolic links to add kitty and kitten to PATH (assuming ~/.local/bin is in
+# your system-wide PATH)
+ln -sf ~/.local/kitty.app/bin/kitty ~/.local/kitty.app/bin/kitten ~/.local/bin/
+# Place the kitty.desktop file somewhere it can be found by the OS
+cp ~/.local/kitty.app/share/applications/kitty.desktop ~/.local/share/applications/
+# If you want to open text files and images in kitty via your file manager also add the kitty-open.desktop file
+cp ~/.local/kitty.app/share/applications/kitty-open.desktop ~/.local/share/applications/
+# Update the paths to the kitty and its icon in the kitty.desktop file(s)
+sed -i "s|Icon=kitty|Icon=/home/$USER/.local/kitty.app/share/icons/hicolor/256x256/apps/kitty.png|g" ~/.local/share/applications/kitty*.desktop
+sed -i "s|Exec=kitty|Exec=/home/$USER/.local/kitty.app/bin/kitty|g" ~/.local/share/applications/kitty*.desktop
+

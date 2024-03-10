@@ -1,0 +1,64 @@
+First check if support is already enabled with
+lscpu | grep cppc
+
+if you get no output then to 2
+
+Make sure CPPC is enabled in your BIOS/UEFI, some its on by default others its not.
+
+Most non-Epyc systems will need to add one or both of these to your kernel command line
+
+Enable shared mem mode (This is not Required for Ryzen 7000 series+ and most laptop 5000/6000 series)
+
+amd_pstate.shared_mem=1
+
+EDIT: amd-pstate=passive is now required for kernels 6.1+
+
+Pstate driver doesnt load automatically you can do this to load it on boot
+by creating a file
+
+/etc/modules-load.d/amd-pstate.conf
+
+in that file it should say
+
+# Load amd pstate at boot
+amd_pstate
+confirming its working you can do
+
+install linux-tools-generic and run sudo cpupower frequency-info
+
+fari@elissir:~$ sudo cpupower frequency-info
+analyzing CPU 10:
+  driver: amd-pstate
+  CPUs which run at the same hardware frequency: 10
+  CPUs which need to have their frequency coordinated by software: 10
+  maximum transition latency: 20.0 us
+  hardware limits: 400 MHz - 4.46 GHz
+  available cpufreq governors: conservative ondemand userspace powersave performance schedutil
+  current policy: frequency should be within 400 MHz and 4.46 GHz.
+                  The governor "schedutil" may decide which speed to use
+                  within this range.
+  current CPU frequency: Unable to call hardware
+  current CPU frequency: 2.54 GHz (asserted by call to kernel)
+  boost state support:
+    Supported: yes
+    Active: yes
+    AMD PSTATE Highest Performance: 166. Maximum Frequency: 4.46 GHz.
+    AMD PSTATE Nominal Performance: 119. Nominal Frequency: 3.20 GHz.
+    AMD PSTATE Lowest Non-linear Performance: 41. Lowest Non-linear Frequency: 1.10 GHz.
+    AMD PSTATE Lowest Performance: 15. Lowest Frequency: 400 MHz.
+
+https://forum.endeavouros.com/t/how-to-use-amd-p-state-in-linux/25247
+
+---------------------------------------------------------------
+
+Didn't find the reason, but removing built-in gnome power-profiles and installing tlp did the job better:
+
+sudo systemctl mask power-profiles-daemon.service
+sudo apt purge --auto-remove power-profiles-daemon
+
+tlp:
+sudo apt install tlp
+sudo systemctl enable tlp.service
+reboot
+
+https://askubuntu.com/questions/1446042/ryzen-5x-gpu-always-in-d0-state/1446136#1446136

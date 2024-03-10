@@ -1,0 +1,12 @@
+README.md
+
+.config/nvim/lazy-lock.json
+
+docs/
+docs/**
+
+scripts/
+scripts/**
+
+fonts/
+fonts/**

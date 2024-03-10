@@ -1,0 +1,15 @@
+[Default Applications]
+video/x-matroska=vlc.desktop
+text/html=google-chrome.desktop
+x-scheme-handler/http=google-chrome.desktop
+x-scheme-handler/https=google-chrome.desktop
+x-scheme-handler/about=google-chrome.desktop
+x-scheme-handler/unknown=google-chrome.desktop
+x-scheme-handler/eclipse+command=_usr_share_dbeaver-ce_.desktop
+video/mp4=vlc.desktop
+application/pdf=okularApplication_pdf.desktop
+
+[Added Associations]
+video/x-matroska=vlc.desktop;
+video/mp4=vlc.desktop;
+application/pdf=okularApplication_pdf.desktop;

@@ -1,0 +1,6 @@
+installed packages:
+xdg-desktop-portal xdg-desktop-portal-gtk and xdg-desktop-portal-wlr
+and then adding the file $HOME/.config/xdg-desktop-portal/portals.conf with : 
+
+[preferred] 
+default=gtk;wlr
