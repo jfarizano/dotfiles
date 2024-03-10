@@ -1,8 +1,16 @@
+{{ if eq .chezmoi.hostname "nyx" }}
 [geometry]
 posx=4802
 posy=5
 sizex=951
 sizey=1043
+{{ else if eq .chezmoi.hostname "helios" }}
+[geometry]
+posx=1282
+posy=5
+sizex=631
+sizey=1043
+{{ end }}
 
 [nitrogen]
 view=icon

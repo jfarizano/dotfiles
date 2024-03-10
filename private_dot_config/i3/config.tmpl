@@ -241,7 +241,11 @@ mode "resize" {
 exec --no-startup-id /usr/bin/gnome-keyring-daemon --start --components=ssh,secrets,pkcs11,gpg
 exec --no-startup-id /usr/lib/policykit-1-gnome/polkit-gnome-authentication-agent-1 &
 exec --no-startup-id /usr/libexec/gsd-xsettings 
+{{ if eq .chezmoi.hostname "nyx" }}
 exec --no-startup-id sh ~/.screenlayout/desktop.sh
+{{ else if eq .chezmoi.hostname "helios" }}
+exec --no-startup-id sh ~/.screenlayout/laptop_default.sh
+{{ end }}
 exec --no-startup-id xss-lock --transfer-sleep-lock -- /home/fari/.config/i3/lock/lock.sh
 exec --no-startup-id xset s off -dpms
 exec --no-startup-id nitrogen --restore; sleep 1; compton -b
