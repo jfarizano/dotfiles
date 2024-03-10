@@ -15,7 +15,7 @@ Para sincronizar más fácilmente los cambios entre diferentes computadoras esto
 
 ### Instalar chezmoi:
 ```bash
-$ sh -c "$(curl -fsLS get.chezmoi.io)" -- -b $HOME/.local/bin
+sh -c "$(curl -fsLS get.chezmoi.io)" -- -b $HOME/.local/bin
 ```
 
 ### Descargar y aplicar configuración
