@@ -27,4 +27,4 @@ Sin autenticación:
 ```bash
 chezmoi init --apply jfarizano
 ```
-Ciertas configuraciones dependeran del hostname de la PC, por ej 'nyx' es mi PC de escritorio y 'helios' mi notebook, y no me enteresa ver la información de la batería en la de escritorio.
+Ciertas configuraciones dependeran del hostname de la PC, por ej 'nyx' es mi PC de escritorio y 'helios' mi notebook, y no me interesa ver la información de la batería o WiFi en la de escritorio.
