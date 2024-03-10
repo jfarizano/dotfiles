@@ -136,4 +136,27 @@ source ~/.git-prompt.sh
 # \[\e]0;\u@\h: \w\a\]${debian_chroot:+($debian_chroot)}\[\033[01;32m\][\033[00m\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$
 export PS1='\[\033[01;32m\]\u\[\033[00m\]\[\033[01;37m\]@\[\033[00m\]\[\033[01;35m\]\h\[\033[00m\]\[\033[00m\]:\[\033[01;36m\]\w\[\033[00m\]$(__git_ps1 " \[\033[01;33m\](%s)\[\033[00m\]")\$ '
 
+{{ if eq .chezmoi.hostname "helios" }}
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/home/fari/miniconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/home/fari/miniconda3/etc/profile.d/conda.sh" ]; then
+        . "/home/fari/miniconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/home/fari/miniconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
+
+{{ end }}
+
 eval "$(zoxide init --cmd cd bash)"
