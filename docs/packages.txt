@@ -1,7 +1,7 @@
 ===============================================
 Paquetes en repo oficial
 ===============================================
-apt install grub-customizer wget curl git build-essential net-tools i3 rofi openssh-server vlc ffmpeg flatpak tree lxappearance policykit-1-gnome pavucontrol nitrogen flameshot arandr kdeconnect gnome-tweaks gtk-chtheme pulseaudio acpi acpid subversion gdb-multiarch gcc-arm-linux-gnueabi gcc-arm-linux-gnueabihf qemu-system qemu-user-static texlive-full compton unrar xsettingsd neofetch qt5ct libcanberra-gtk-module ripgrep npm tmux libffi-dev libgmp-dev libgmp10 libncurses-dev libncurses5 libtinfo5 ninja-build gettext uidmap xclip playerctl okular btop
+apt install grub-customizer wget curl git build-essential net-tools i3 rofi openssh-server vlc ffmpeg flatpak tree lxappearance policykit-1-gnome pavucontrol nitrogen flameshot arandr kdeconnect gnome-tweaks gtk-chtheme pulseaudio acpi acpid subversion gdb-multiarch gcc-arm-linux-gnueabi gcc-arm-linux-gnueabihf qemu-system qemu-user-static texlive-full compton unrar xsettingsd neofetch qt5ct libcanberra-gtk-module ripgrep npm tmux libffi-dev libgmp-dev libgmp10 libncurses-dev libncurses5 libtinfo5 ninja-build gettext uidmap xclip playerctl okular btop age
 
 syncthing, kitty, lf, fzf
 
