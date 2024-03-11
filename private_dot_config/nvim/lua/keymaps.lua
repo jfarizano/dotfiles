@@ -1,39 +1,39 @@
 -- File explorer
-vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
+vim.keymap.set("n", "<leader>pv", vim.cmd.Ex, { desc = 'Explore files'})
 
 -- Move selected lines, with indenting
-vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
-vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
+vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv", { desc = 'Move selected block down with indenting'})
+vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv", { desc = 'Move selected block up with indenting'})
 
 -- Takes line below and appends it to current line with a space, w/o moving cursor
-vim.keymap.set("n", "J", "mzJ`z")
+vim.keymap.set("n", "J", "mzJ`z", { desc = 'Append line below to current one'})
 
 -- Half page jumping, keeping cursor in the middle
-vim.keymap.set("n", "<C-d>", "<C-d>zz")
-vim.keymap.set("n", "<C-u>", "<C-u>zz")
+vim.keymap.set("n", "<C-d>", "<C-d>zz", { desc = 'Half page [d]own'})
+vim.keymap.set("n", "<C-u>", "<C-u>zz", { desc = 'Half page [u]p'})
 
 -- Keeps search term in the middle
-vim.keymap.set("n", "n", "nzzzv")
-vim.keymap.set("n", "N", "Nzzzv")
+vim.keymap.set("n", "n", "nzzzv", { desc = 'Search for next ocurrence'})
+vim.keymap.set("n", "N", "Nzzzv", { desc = 'Search for previous ocurrence'})
 
 -- Paste into selected without replacing into buffer
-vim.keymap.set("x", "<leader>p", [["_dP]])
+vim.keymap.set("x", "<leader>p", [["_dP]], { desc = '[P]aste into selection w/o replacing buffer'})
 -- Deletes selected without replacing into buffer
-vim.keymap.set({ "n", "v" }, "<leader>d", [["_d]])
+vim.keymap.set({ "n", "v" }, "<leader>d", [["_d]], { desc = '[D]eletes w/o replacing buffer'})
 
 -- Copy selection into OS clipboard
-vim.keymap.set({ "n", "v" }, "<leader>y", [["+y]])
+vim.keymap.set({ "n", "v" }, "<leader>y", [["+y]], { desc = '[Y]ank selection into OS clipboard'})
 -- Copy line into OS clipboard
-vim.keymap.set("n", "<leader>Y", [["+Y]])
+vim.keymap.set("n", "<leader>Y", [["+Y]], { desc = '[Y]ank line into OS clipbaord'})
 
 -- This is going to get me cancelled
-vim.keymap.set("i", "<C-c>", "<Esc>")
+vim.keymap.set("i", "<C-c>", "<Esc>", { desc = 'Same as Esc'})
 
 -- Replaces word where cursor is
-vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
+vim.keymap.set("n", "<leader>rw", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]], { desc = '[R]eplace [W]ord in whole file' })
 
 -- Makes current file executable
-vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
+vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { desc = 'Make current file e[x]ecutable', silent = true })
 
 -- Diagnostic keymaps
 vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, { desc = 'Go to previous [D]iagnostic message' })
