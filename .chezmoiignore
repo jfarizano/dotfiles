@@ -1,5 +1,17 @@
 README.md
 
+{{ if eq .chezmoi.hostname "hermes" }}
+**
+!.bashrc
+!.bash_aliases
+!.bash_work_aliases
+!.profile
+!.Xresources
+!.ssh
+!.git-prompt.sh
+!.config/nvim
+{{ end }}
+
 .config/nvim/lazy-lock.json
 
 docs/

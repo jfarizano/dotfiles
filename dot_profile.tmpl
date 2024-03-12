@@ -8,8 +8,10 @@
 # for ssh logins, install and configure the libpam-umask package.
 #umask 022
 
+{{ if ne .chezmoi.hostname "hermes"}}
 export QT_QPA_PLATFORMTHEME=qt5ct
 export PATH=$PATH:/usr/local/go/bin
+{{ end }}
 
 # if running bash
 if [ -n "$BASH_VERSION" ]; then
@@ -28,7 +30,9 @@ fi
 if [ -d "$HOME/.local/bin" ] ; then
     PATH="$HOME/.local/bin:$PATH"
 fi
+{{ if ne .chezmoi.hostname "hermes"}}
 . "$HOME/.cargo/env"
+{{ end }}
 
 {{ if eq .chezmoi.hostname "helios" }}
 # Setting the LG_WEBOS_TV_SDK_HOME variable to the parent directory of CLI
