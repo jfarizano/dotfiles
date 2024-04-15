@@ -7,7 +7,7 @@ alias dcstart='docker compose start'
 alias dcstop='docker compose stop'
 
 # easier opening of files with default app
-open(){ xdg-open $@ &>> /dev/null & }
+open(){ nohup xdg-open $@ > /dev/null 2>&1 & }
 
 # git aliases
 alias gs='git status'
