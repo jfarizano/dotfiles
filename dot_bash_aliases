@@ -1,6 +1,6 @@
 # mejores aliases de la historia
 alias please='sudo'
-alias fuck='sudo !!'
+alias fuck='sudo $(history -p !!)'
 
 # porque la dislexia es mas fuerte que todo
 alias dc='cd'
