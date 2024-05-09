@@ -8,7 +8,7 @@
 # for ssh logins, install and configure the libpam-umask package.
 #umask 022
 
-{{ if ne .chezmoi.hostname "artemis"}}
+{{ if (or (eq .chezmoi.hostname "helios") (eq .chezmoi.hostname "nyx")) }}
 export QT_QPA_PLATFORMTHEME=qt5ct
 export PATH=$PATH:/usr/local/go/bin
 
@@ -31,7 +31,7 @@ if [ -d "$HOME/.local/bin" ] ; then
     PATH="$HOME/.local/bin:$PATH"
 fi
 
-{{ if eq .chezmoi.hostname "artemis"}}
+{{ if (not (or (eq .chezmoi.hostname "helios") (eq .chezmoi.hostname "nyx"))) }}
 # if running bash
 if [ -n "$BASH_VERSION" ]; then
     # include .bashrc if it exists
@@ -41,7 +41,7 @@ if [ -n "$BASH_VERSION" ]; then
 fi
 {{ end }}
 
-{{ if ne .chezmoi.hostname "artemis"}}
+{{ if (or (eq .chezmoi.hostname "helios") (eq .chezmoi.hostname "nyx")) }}
 . "$HOME/.cargo/env"
 {{ end }}
 

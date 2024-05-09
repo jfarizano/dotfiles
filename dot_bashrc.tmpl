@@ -127,7 +127,7 @@ if ! shopt -oq posix; then
     . /etc/bash_completion
   fi
 fi
-{{ if ne .chezmoi.hostname "artemis" }}
+{{ if (or (eq .chezmoi.hostname "helios") (eq .chezmoi.hostname "nyx")) }}
 . "$HOME/.cargo/env"
 {{ end }}
 
