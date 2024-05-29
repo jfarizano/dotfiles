@@ -23,12 +23,12 @@ alias gpull='git pull'
 alias gpush='git push'
 
 # do ls after successful cd
-cdls() { cd "$@" && ls; }
+cds() { cd "$@" && ls; }
 
 # movement lul (roba2 de por ahi)
-alias ..='cdls ..'
-alias ...='cdls ../..'
-alias ....='cdls ../../..'
+alias ..='cds ..'
+alias ...='cds ../..'
+alias ....='cds ../../..'
 
 # aliases 2 always use nvim
 alias vi='nvim'
@@ -49,7 +49,7 @@ alias chmod='chmod --preserve-root'
 alias chgrp='chgrp --preserve-root'
 
 # become root
-alias root='sudo -i'
+alias root='sudo bash'
 
 # olis
 alias df='df -H'
@@ -59,9 +59,6 @@ alias dus='du | sort -H'
 # copy working directory to clipboard
 alias cpwd='pwd | tr -d "\n" | xclip -sel c'
 
-# open terminal same working directory
-alias dupwd='urxvt &'
-
 # alias gcc
 alias gg='gcc -g'
 alias ggn='gcc -g -no-pie'
@@ -69,3 +66,22 @@ alias gcc-arm='arm-linux-gnueabi-gcc -g -static'
 alias gcc-armhf='arm-linux-gnueabihf-gcc -g -static'
 alias qemu-arm='qemu-arm-static -g 1234'
 alias gdb-arm='gdb-multiarch --eval-command="target remote localhost:1234"'
+
+# easier services management
+alias starts='sudo systemctl start'
+alias stops='sudo systemctl stop'
+alias reloads='sudo systemctl reload'
+alias stats='sudo systemctl status'
+alias kills='sudo systemctl kill'
+
+# now sudo work with aliases
+alias sudo='sudo '
+
+# copy with progress bar
+alias copy='rsync -ah --progress'
+
+# diff with color by default
+alias diff='diff --color=auto'
+
+# fast web server on current directory
+alias webs='python3 -m http.server'
