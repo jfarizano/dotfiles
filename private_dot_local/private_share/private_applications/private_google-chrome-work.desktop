@@ -4,7 +4,7 @@ Version=1.0
 Terminal=false
 Type=Application
 Name=Google Chrome - Work profile
-Exec=/usr/bin/google-chrome-stable "--profile-directory=Profile 1" --new-window
+Exec=/usr/bin/google-chrome-stable "--profile-directory=Profile 1" --new-window %U
 Icon=google-chrome
 Categories=Network;WebBrowser;
 StartupNotify=true
