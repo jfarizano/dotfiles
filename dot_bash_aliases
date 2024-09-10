@@ -87,4 +87,4 @@ alias diff='diff --color=auto'
 alias webs='python3 -m http.server'
 
 # abre al azar un capitulo de los simuladores, vital para trabajar
-alias simus='cd simu; nohup vlc "$(find -type f -iname '*.mp4' -o -iname '*.mkv' | shuf | head -n 1)" > /dev/null 2>&1 & exit'
+alias simus='cd simu; nohup vlc "$(find -type f -iname '*.mp4' -o -iname '*.mkv' | shuf | head -n 1)" --fullscreen > /dev/null 2>&1 & exit'
