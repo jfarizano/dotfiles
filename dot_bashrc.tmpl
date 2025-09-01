@@ -128,7 +128,9 @@ if ! shopt -oq posix; then
   fi
 fi
 
-[ -f "/home/fari/.ghcup/env" ] && source "/home/fari/.ghcup/env" # ghcup-env
+[ -f "$HOME/.cargo/env" ] && source "$HOME/.cargo/env"
+
+[ -f "$HOME/.ghcup/env" ] && source "$HOME/.ghcup/env" # ghcup-env
 
 source ~/.git-prompt.sh
 

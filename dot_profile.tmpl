@@ -40,3 +40,5 @@ if [ -n "$BASH_VERSION" ]; then
     fi
 fi
 {{ end }}
+
+[ -f "$HOME/.cargo/env" ] && source "$HOME/.cargo/env"
