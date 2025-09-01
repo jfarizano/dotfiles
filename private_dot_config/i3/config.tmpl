@@ -29,7 +29,7 @@ font xft:URWGothic-Book 11
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec kitty
+bindsym $mod+Return exec alacritty
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -253,9 +253,9 @@ exec --no-startup-id nm-applet
 exec --no-startup-id flameshot
 exec --no-startup-id kdeconnect-indicator
 {{ if eq .chezmoi.hostname "helios" }}
-exec --no-startup-id blueman-applet
 exec --no-startup-id xinput set-prop "ASUE120B:00 04F3:31C0 Touchpad" "libinput Tapping Enabled" 1
 {{ end }}
+exec --no-startup-id blueman-applet
 exec --no-startup-id dunst
 
 # Color palette used for the terminal ( ~/.Xresources file )
