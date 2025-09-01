@@ -30,10 +30,6 @@ alias ..='cds ..'
 alias ...='cds ../..'
 alias ....='cds ../../..'
 
-# aliases 2 always use nvim
-alias vi='nvim'
-alias vim='nvim'
-
 # tengo que explicarlo?
 alias apt='sudo apt'
 
